@@ -1,0 +1,4 @@
+#!/bin/sh
+
+curl -fsSL https://xmake.io/shget.text | bash
+source ~/.xmake/profile
