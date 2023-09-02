@@ -1,0 +1,13 @@
+# https://docs.docker.com/compose/compose-file/05-services/
+services:
+
+  api:
+    image: gcc:13.2.0
+    entrypoint:
+      - sleep
+      - infinity
+    init: true
+    volumes:
+      - type: bind
+        source: /var/run/docker.sock
+        target: /var/run/docker.sock
