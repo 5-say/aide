@@ -1,8 +1,12 @@
 add_rules("mode.debug", "mode.release")
 
+add_repositories("xmake-repo git@github.com:xmake-io/xmake-repo.git")
+add_requires("cli11")
+
 target("aide")
     set_kind("binary")
     add_files("src/*.cpp")
+    add_packages("cli11")
 
 --
 -- If you want to known more usage about xmake, please see https://xmake.io
