@@ -11,7 +11,7 @@ namespace demo {
 
         // Add options to sub, binding them to opt.
         sub->add_option("-f,--file", opt->file, "File name")->required();
-        sub->add_flag("--with-foo", opt->with_foo, "Counter");
+        sub->add_flag("-w,--with-foo", opt->with_foo, "Counter");
 
         // Set the run function as callback to be called when this subcommand is issued.
         sub->callback([opt]() { run(*opt); });
