@@ -19,6 +19,6 @@ init:
 
 .PHONY:r
 r:
-	xmake --root
+	xmake
 	cp build/linux/x86_64/release/aide aide
 	./aide -h

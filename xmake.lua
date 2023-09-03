@@ -1,13 +1,16 @@
+-- https://xmake.io/#/zh-cn/
+-- https://github.com/rigtorp/awesome-modern-cpp
+
 add_rules("mode.debug", "mode.release")
 add_rules("plugin.compile_commands.autoupdate", {outputdir = ".vscode"})
 
 add_repositories("xmake-repo git@github.com:xmake-io/xmake-repo.git")
-add_requires("cli11")
+add_requires("cli11 2.3.2", "inja 3.4.0")
 
 target("aide")
     set_kind("binary")
     add_files("src/*.cpp")
-    add_packages("cli11")
+    add_packages("cli11", "inja")
 
 --
 -- If you want to known more usage about xmake, please see https://xmake.io
