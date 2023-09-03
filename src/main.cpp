@@ -1,9 +1,12 @@
-#include "CLI/CLI.hpp"
+#include "demo/demo.cpp"
+#include <CLI/CLI.hpp>
 
 int main(int argc, char **argv) {
-    CLI::App app;
+    CLI::App app{"..."};
 
-    // Add new options/flags here
+    demo::cmd(app);
+
+    app.require_subcommand();
 
     CLI11_PARSE(app, argc, argv);
 

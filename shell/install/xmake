@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# https://xmake.io/#/zh-cn/
 curl -fsSL https://xmake.io/shget.text | bash
 source ~/.xmake/profile
 # XMake
