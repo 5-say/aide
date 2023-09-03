@@ -5,6 +5,9 @@
 
 namespace demo {
 
+    const std::string subcommand_name = "demo";
+    const std::string subcommand_description = "performs subcommand demo";
+
     struct Options {
         std::string file;
         bool with_foo;

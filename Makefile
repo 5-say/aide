@@ -21,3 +21,4 @@ init:
 r:
 	xmake --root
 	cp build/linux/x86_64/release/aide aide
+	./aide -h

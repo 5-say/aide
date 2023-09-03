@@ -6,8 +6,8 @@ namespace demo {
 
     void cmd(CLI::App &app) {
         // Create the option and subcommand objects.
+        auto *sub = app.add_subcommand(subcommand_name, subcommand_description);
         auto opt = std::make_shared<Options>();
-        auto *sub = app.add_subcommand("demo", "performs subcommand demo");
 
         // Add options to sub, binding them to opt.
         sub->add_option("-f,--file", opt->file, "File name")->required();
