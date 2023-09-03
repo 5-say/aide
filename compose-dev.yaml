@@ -3,7 +3,7 @@ services:
 
   api:
     image: gcc:13.2.0
-    user: dev
+    user: 'dev:1000'
     entrypoint:
       - sleep
       - infinity
