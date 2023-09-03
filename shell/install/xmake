@@ -2,3 +2,5 @@
 
 curl -fsSL https://xmake.io/shget.text | bash
 source ~/.xmake/profile
+# XMake
+code --install-extension tboox.xmake-vscode

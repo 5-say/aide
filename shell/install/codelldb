@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# wget https://github.com/vadimcn/codelldb/releases/download/v1.9.2/codelldb-x86_64-linux.vsix
+# code install from codelldb-x86_64-linux.vsix
+# CodeLLDB
+code --install-extension vadimcn.vscode-lldb

@@ -12,6 +12,9 @@ run:
 init:
 	sh shell/install/docker
 	sh shell/install/vscode-extension
+	sh shell/install/cpp
+	sh shell/install/clangd
+	sh shell/install/codelldb
 	sh shell/install/xmake
 
 .PHONY:r

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+apt-get install clangd -y
+# clangd
+code --install-extension llvm-vs-code-extensions.vscode-clangd

@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# C/C++ for Visual Studio Code
+code --install-extension ms-vscode.cpptools
