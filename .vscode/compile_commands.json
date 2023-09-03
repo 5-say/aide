@@ -1,0 +1,6 @@
+[
+{
+  "directory": "/com.docker.devenvironments.code",
+  "arguments": ["/usr/local/bin/gcc", "-c", "-m64", "-fvisibility=hidden", "-fvisibility-inlines-hidden", "-O3", "-I", "/root/.xmake/packages/c/cli11/v2.3.2/9ae0af6d49c84860929a41de0dcdb9d9/include", "-DNDEBUG", "-o", "build/.objs/aide/linux/x86_64/release/src/main.cpp.o", "src/main.cpp"],
+  "file": "src/main.cpp"
+}]

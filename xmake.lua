@@ -1,4 +1,5 @@
 add_rules("mode.debug", "mode.release")
+add_rules("plugin.compile_commands.autoupdate", {outputdir = ".vscode"})
 
 add_repositories("xmake-repo git@github.com:xmake-io/xmake-repo.git")
 add_requires("cli11")
