@@ -2,7 +2,7 @@
 #include <CLI/CLI.hpp>
 
 int main(int argc, char **argv) {
-    CLI::App app{"..."};
+    CLI::App app{};
 
     demo::cmd(app);
 
