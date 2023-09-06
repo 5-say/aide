@@ -8,3 +8,4 @@ build/
 
 aide
 .vscode/.cache
+out.text

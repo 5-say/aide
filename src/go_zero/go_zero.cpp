@@ -1,6 +1,8 @@
 #include "go_zero.hpp"
 #include <iostream>
 #include <memory>
+#include <ostream>
+#include "inja/inja.hpp"
 
 namespace go_zero {
 
@@ -25,6 +27,14 @@ namespace go_zero {
         }
 
         void run(Options const &opt) {
+            inja::json data ({
+                {"demo", "888"},
+            });
+            // data["demo"] = "666";
+            std::ofstream file ("out.text");
+            file << inja::render("This is test template, data is {{ demo }}", data);
+            file.close();
+
             // Do stuff...
             std::cout << "Working on file: " << opt.out << std::endl;
         }
