@@ -21,4 +21,7 @@ init:
 r:
 	xmake
 	cp build/linux/x86_64/release/aide aide
-	./aide -h
+
+.PHONY:t
+t:r
+	./aide go-zero api -i compose-dev.yaml

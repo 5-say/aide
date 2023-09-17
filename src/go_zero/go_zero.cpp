@@ -11,6 +11,7 @@ namespace go_zero {
         auto sub = app.add_subcommand(subcommand_name, subcommand_description);
         sub->require_subcommand();
         init::cmd(*sub);
+        api::cmd(*sub);
     }
 
     namespace init {
@@ -56,10 +57,11 @@ namespace go_zero {
         }
 
         void run(Options const &opt) {
-            YAML::Node api = YAML::LoadFile(opt->in);
+            YAML::Node api = YAML::LoadFile(opt.in);
 
             // Do stuff...
             std::cout << "Working on file: " << opt.in << std::endl;
+            std::cout << api["services"]["aide"]["entrypoint"] << std::endl;
         }
     }
 }
