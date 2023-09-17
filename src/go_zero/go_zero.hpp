@@ -22,4 +22,17 @@ namespace go_zero {
         void run(Options const &opt);
     }
 
+    namespace api {
+
+        const std::string subcommand_name = "api";
+        const std::string subcommand_description = "生成服务端 api 代码";
+
+        struct Options {
+            std::string in; // 定义 api 的 yaml 文件路径
+        };
+
+        void cmd(CLI::App &parent);
+        void run(Options const &opt);
+    }
+
 }

@@ -3,6 +3,7 @@
 #include <memory>
 #include <ostream>
 #include "inja/inja.hpp"
+#include "yaml-cpp/yaml.h"
 
 namespace go_zero {
 
@@ -37,6 +38,28 @@ namespace go_zero {
 
             // Do stuff...
             std::cout << "Working on file: " << opt.out << std::endl;
+        }
+    }
+
+    namespace api {
+
+        void cmd(CLI::App &parent) {
+            // Create the option and subcommand objects.
+            auto *sub = parent.add_subcommand(subcommand_name, subcommand_description);
+            auto opt = std::make_shared<Options>();
+
+            // Add options to sub, binding them to opt.
+            sub->add_option("-i,--in", opt->in, "api yaml file path")->default_val("api.yaml");
+
+            // Set the run function as callback to be called when this subcommand is issued.
+            sub->callback([opt]() { run(*opt); });
+        }
+
+        void run(Options const &opt) {
+            YAML::Node api = YAML::LoadFile(opt->in);
+
+            // Do stuff...
+            std::cout << "Working on file: " << opt.in << std::endl;
         }
     }
 }
