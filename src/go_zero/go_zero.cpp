@@ -2,14 +2,15 @@
 #include <iostream>
 #include <memory>
 #include <ostream>
-#include "inja/inja.hpp"
-#include "yaml-cpp/yaml.h"
+#include <inja/inja.hpp>
+#include <yaml-cpp/yaml.h>
 
 namespace go_zero {
 
     void cmd(CLI::App &app) {
         auto sub = app.add_subcommand(subcommand_name, subcommand_description);
         sub->require_subcommand();
+
         init::cmd(*sub);
         api::cmd(*sub);
     }
@@ -59,9 +60,11 @@ namespace go_zero {
         void run(Options const &opt) {
             YAML::Node api = YAML::LoadFile(opt.in);
 
-            // Do stuff...
-            std::cout << "Working on file: " << opt.in << std::endl;
-            std::cout << api["services"]["aide"]["entrypoint"] << std::endl;
+            inja::Environment env;
+            inja::Template temp = env.parse_template("./tpl.txt");
+            inja::json data = inja::json(yaml2json(api));
+            env.write(temp, data, "./result.txt");
         }
+
     }
 }

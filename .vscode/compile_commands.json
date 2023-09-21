@@ -1,6 +1,6 @@
 [
 {
   "directory": "/com.docker.devenvironments.code",
-  "arguments": ["/usr/local/bin/gcc", "-c", "-m64", "-fvisibility=hidden", "-fvisibility-inlines-hidden", "-O3", "-std=c++20", "-I", "/root/.xmake/packages/c/cli11/v2.3.2/9ae0af6d49c84860929a41de0dcdb9d9/include", "-I", "/root/.xmake/packages/i/inja/v3.4.0/c21dead9af3c468bafd7f0bd8867520e/include", "-I", "/root/.xmake/packages/n/nlohmann_json/v3.11.2/d0ab6439a26046eab271bd900a8ea21b/include", "-I", "/root/.xmake/packages/y/yaml-cpp/0.8.0/c41b70635ed74ae9a0628bd794bd504b/include", "-DNDEBUG", "-o", "build/.objs/aide/linux/x86_64/release/src/main.cpp.o", "src/main.cpp"],
+  "arguments": ["/usr/local/bin/gcc", "-c", "-m64", "-fvisibility=hidden", "-fvisibility-inlines-hidden", "-O3", "-std=c++20", "-I", "/root/.xmake/packages/c/cli11/v2.3.2/9ae0af6d49c84860929a41de0dcdb9d9/include", "-I", "/root/.xmake/packages/i/inja/v3.4.0/c21dead9af3c468bafd7f0bd8867520e/include", "-I", "/root/.xmake/packages/n/nlohmann_json/v3.11.2/d0ab6439a26046eab271bd900a8ea21b/include", "-I", "/root/.xmake/packages/y/yaml-cpp/0.8.0/c41b70635ed74ae9a0628bd794bd504b/include", "-I", "/root/.xmake/packages/j/jsoncpp/1.9.5/6a59121558c24c01a73b20670010be3a/include", "-DNDEBUG", "-o", "build/.objs/aide/linux/x86_64/release/src/main.cpp.o", "src/main.cpp"],
   "file": "src/main.cpp"
 }]

@@ -2,6 +2,8 @@
 
 #include <CLI/CLI.hpp>
 #include <string>
+#include <nlohmann/json.hpp>
+#include <yaml-cpp/yaml.h>
 
 namespace go_zero {
 
@@ -33,6 +35,46 @@ namespace go_zero {
 
         void cmd(CLI::App &parent);
         void run(Options const &opt);
+
+        inline nlohmann::json parse_scalar(const YAML::Node& node) {
+            int i;
+            double d;
+            bool b;
+            std::string s;
+
+            if (YAML::convert<int>::decode(node, i))
+                return i;
+            if (YAML::convert<double>::decode(node, d))
+                return d;
+            if (YAML::convert<bool>::decode(node, b))
+                return b;
+            if (YAML::convert<std::string>::decode(node, s))
+                return s;
+
+            return nullptr;
+        }
+
+        inline nlohmann::json yaml2json(const YAML::Node& root) {
+            nlohmann::json j{};
+            switch (root.Type()) {
+            case YAML::NodeType::Null:
+                break;
+            case YAML::NodeType::Scalar:
+                return parse_scalar(root);
+            case YAML::NodeType::Sequence:
+                for (auto&& node : root)
+                    j.emplace_back(yaml2json(node));
+                break;
+            case YAML::NodeType::Map:
+                for (auto&& it : root) {
+                    j[it.first.as<std::string>()] = yaml2json(it.second);
+                }
+                break;
+            default:
+                break;
+            }
+            return j;
+        }
     }
 
 }
